@@ -14,8 +14,6 @@ board = [
     [0,4,9,2,0,6,0,0,7]
 ]
 
-
-
 class Game_Solver:
 
     def __init__(self, board):
@@ -98,9 +96,11 @@ with open('boards/' + 'beginner.sudoku', 'r') as boards_file:
 # print(board)
 
 
-solver = Game_Solver(board)
+if __name__ == "__main__":
+    
+    solver = Game_Solver(board)
 
-solver.print_board(board)
-solver.solve(board)
-print("___________________")
-solver.print_board(board)
+    solver.print_board(board)
+    solver.solve(board)
+    print("___________________")
+    solver.print_board(board)

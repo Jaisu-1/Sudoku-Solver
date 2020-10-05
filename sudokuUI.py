@@ -1,4 +1,5 @@
-from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM
+from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM, LEFT
+from gameAI import Game_Solver
 
 MARGIN = 80
 SIDE = 120
@@ -26,10 +27,19 @@ class SudokuUI(Frame):
 
         clear_button = Button(self,
                               text="Clear answers",
-                              height = HEIGHT // 20,
-                              font = ("Monaco", 15),
+                              height = HEIGHT // 15,
+                              font = ("Monaco", 20),
                               command=self.__clear_answers)
-        clear_button.pack(fill=BOTH, side=BOTTOM)
+
+        solver_button = Button(self, 
+                            text = "Solve Puzzle",
+                            height = HEIGHT // 15,
+                            font = ("Monaco", 20),
+                            command=self.__solve_puzzle
+                            )
+        clear_button.pack(side = LEFT)
+        solver_button.pack(side = LEFT)
+
 
         self.__draw_grid()
         self.__draw_puzzle()
@@ -160,3 +170,13 @@ class SudokuUI(Frame):
             text="You win!", tags="winner",
             fill="white", font=("Arial", 32)
         )
+
+    def __solve_puzzle(self):
+        print("working")
+
+        solver = Game_Solver(self.game.puzzle)
+        solver.print_board(self.game.puzzle)
+        solver.solve(self.game.puzzle)
+        print("___________________")
+        solver.print_board(self.game.puzzle)
+        self.__draw_puzzle()
