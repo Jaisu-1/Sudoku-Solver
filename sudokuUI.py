@@ -26,6 +26,8 @@ class SudokuUI(Frame):
 
         clear_button = Button(self,
                               text="Clear answers",
+                              height = HEIGHT // 20,
+                              font = ("Monaco", 15),
                               command=self.__clear_answers)
         clear_button.pack(fill=BOTH, side=BOTTOM)
 
@@ -78,7 +80,7 @@ class SudokuUI(Frame):
                     else:
                         color = "dark green"
 
-                    self.canvas.create_text(x, y, text=answer, tags="numbers", fill = color, font = (20))
+                    self.canvas.create_text(x, y, text=answer, tags="numbers", fill = color, font = ("Monaco", 25))
     
     def __clear_answers(self):
         """
