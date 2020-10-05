@@ -1,6 +1,8 @@
 from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM
-from sudokuBoard import MARGIN, WIDTH, HEIGHT, SIDE
 
+MARGIN = 80
+SIDE = 120
+WIDTH = HEIGHT = MARGIN * 2 + SIDE * 9
 class SudokuUI(Frame):
     """
     """
@@ -15,9 +17,11 @@ class SudokuUI(Frame):
         self.__initUI()
 
     def __initUI(self):
+        """
+        """
         self.parent.title("Sudoku")
         self.pack(fill=BOTH, expand=1)
-        self.canvas = Canvas(self, width = WIDTH, height = HEIGHT)
+        self.canvas = Canvas(self, bg = "white" , width = WIDTH, height = HEIGHT)
         self.canvas.pack(fill=BOTH, side=TOP)
 
         clear_button = Button(self,
@@ -70,11 +74,11 @@ class SudokuUI(Frame):
                     original = self.game.start_puzzle[i][j]
                     
                     if answer == original:
-                        color = "midnight blue"
+                        color = "red"
                     else:
                         color = "dark green"
 
-                    self.canvas.create_text(x, y, text=answer, tags="numbers", fill = color)
+                    self.canvas.create_text(x, y, text=answer, tags="numbers", fill = color, font = (20))
     
     def __clear_answers(self):
         """
@@ -82,6 +86,7 @@ class SudokuUI(Frame):
 
         self.game.start()
         self.canvas.delete("victory")
+        self.canvas.delete("winner")
         self.__draw_puzzle()
 
     def __cell_clicked(self, event):
@@ -98,8 +103,8 @@ class SudokuUI(Frame):
             self.canvas.focus_set()
 
         # Get row and column from x , y coordinates
-        row = (y - MARGIN) / SIDE
-        col = (x - MARGIN) / SIDE
+        row = (y - MARGIN) // SIDE
+        col = (x - MARGIN) // SIDE
 
         # if cell was selected already - deselect it
         if (row, col) == (self.row, self.col):
@@ -140,11 +145,9 @@ class SudokuUI(Frame):
     def __draw_victory(self):
         """
         """
-        def __draw_victory(self):
-        # create a oval (which will be a circle)
         x0 = y0 = MARGIN + SIDE * 2
         x1 = y1 = MARGIN + SIDE * 7
-        self.canvas.create_oval(s
+        self.canvas.create_oval(
             x0, y0, x1, y1,
             tags="victory", fill="dark orange", outline="orange"
         )

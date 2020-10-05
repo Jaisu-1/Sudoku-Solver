@@ -5,22 +5,22 @@ from sudokuBoard import SudokuBoard
 class SudokuGame(object):
     """
     """
-    def _init_(self, board_file):
+    def __init__(self, board_file):
         
         self.board_file = board_file
-        Board = SudokuBoard(self.board_file)
-        self.puzzle = Board.board
+        Board = SudokuBoard(board_file)
+        self.start_puzzle = Board.board
 
     def start(self):
-        
+        """
+        """
         # Final Solved Flag
         self.game_over = False
         self.puzzle = []
-
         for i in range(9):
             self.puzzle.append([])
             for j in range(9):
-                self.puzzle[i].append(self.puzzle[i[j]])
+                self.puzzle[i].append(self.start_puzzle[i][j])
 
     def check_win(self):
         """

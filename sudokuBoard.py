@@ -1,13 +1,3 @@
-import argparse
-from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM
-
-# Global Variables
-BOARDS = [0, 1, 2, 3]
-MARGIN = 20
-SIDE = 50
-WIDTH = HEIGHT = MARGIN * 2 + SIDE * 9
-
-# Need to inherit from Exception superclass
 class SudokuError(Exception):
     """
     """
@@ -45,7 +35,10 @@ class SudokuBoard(object):
                 # Raise error if character is not an integer
                 if not c.isdigit():
                     raise SudokuError("Only digits from 0-9 are allowed to be characters.")
+                board[-1].append(int(c))
         # Check for 9 lines (Assert over it), raise error if not true
+        if len(board) != 9:
+            raise SudokuError("Each sudoku puzzle must be 9 lines long")
 
         # Return the fully constructed board
         return board
