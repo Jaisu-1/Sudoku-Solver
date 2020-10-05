@@ -43,4 +43,7 @@ class SudokuBoard(object):
         # Return the fully constructed board
         return board
 
+    def return_board(self):
+        return self.board
+
     
