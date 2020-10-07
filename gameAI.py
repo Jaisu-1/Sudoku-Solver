@@ -91,9 +91,9 @@ class Game_Solver:
 
         return None
 
-with open('boards/' + 'beginner.sudoku', 'r') as boards_file:
-    board = SudokuBoard(boards_file).return_board()
-# print(board)
+# with open('boards/' + 'beginner.sudoku', 'r') as boards_file:
+#     board = SudokuBoard(boards_file).return_board()
+# # print(board)
 
 
 if __name__ == "__main__":
