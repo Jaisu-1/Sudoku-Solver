@@ -1,8 +1,8 @@
 from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM, LEFT
 from gameAI import Game_Solver
 
-MARGIN = 80
-SIDE = 120
+MARGIN = 40
+SIDE = 60
 WIDTH = HEIGHT = MARGIN * 2 + SIDE * 9
 class SudokuUI(Frame):
     """
@@ -28,15 +28,16 @@ class SudokuUI(Frame):
         clear_button = Button(self,
                               text="Clear answers",
                               height = HEIGHT // 15,
-                              font = ("Monaco", 20),
+                              font = ("Monaco", HEIGHT // 50),
                               command=self.__clear_answers)
 
         solver_button = Button(self, 
                             text = "Solve Puzzle",
                             height = HEIGHT // 15,
-                            font = ("Monaco", 20),
+                            font = ("Monaco", HEIGHT // 50),
                             command=self.__solve_puzzle
                             )
+                            
         clear_button.pack(side = LEFT)
         solver_button.pack(side = LEFT)
 
