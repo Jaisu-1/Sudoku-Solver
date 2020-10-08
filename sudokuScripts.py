@@ -27,10 +27,10 @@ def parse_arguments():
     return args['board']
 
 
-def start_game(board_name):
+def start_game():
     """
     """
-    # board_name = parse_arguments()
+    board_name = parse_arguments()
     with open('boards/' + '%s' % board_name, 'r') as boards_file:
 
         root = Tk()
@@ -43,4 +43,4 @@ def start_game(board_name):
 
 if __name__ == '__main__':
     generate(LEVEL)
-    start_game('temp.sudoku')
+    start_game()

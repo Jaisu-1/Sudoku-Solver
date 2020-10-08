@@ -89,14 +89,12 @@ class SudokuUI(Frame):
         self.level = "Medium"
         self.fresh_start()
 
-
     
     def __hard_clicked(self):
         """
         """
         self.level = "Hard"
         self.fresh_start()
-
 
     
     def __insane_clicked(self):
