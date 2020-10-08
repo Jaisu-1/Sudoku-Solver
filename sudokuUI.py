@@ -1,8 +1,8 @@
-from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM, LEFT
+from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM, LEFT, RIGHT, Label
 from gameAI import Game_Solver
 
-MARGIN = 40
-SIDE = 60
+MARGIN = 80
+SIDE = 120
 WIDTH = HEIGHT = MARGIN * 2 + SIDE * 9
 class SudokuUI(Frame):
     """
@@ -28,18 +28,33 @@ class SudokuUI(Frame):
         clear_button = Button(self,
                               text="Clear answers",
                               height = HEIGHT // 15,
-                              font = ("Monaco", HEIGHT // 50),
+                              font = ("Monaco", 20),
                               command=self.__clear_answers)
 
         solver_button = Button(self, 
                             text = "Solve Puzzle",
                             height = HEIGHT // 15,
-                            font = ("Monaco", HEIGHT // 50),
+                            font = ("Monaco", 20),
                             command=self.__solve_puzzle
                             )
+
+        New_Label = Label(self, text = "New Puzzle : ", font = ("Monaco, 20"))
+
+        easy_button = Button(self, text = "Easy", font = ("Monaco", 20))
+        medium_button = Button(self, text = "Medium", font = ("Monaco", 20))
+        hard_button = Button(self, text = "Hard", font = ("Monaco", 20))
+        insane_button = Button(self, text = "Insane", font = ("Monaco", 20))
+
+
                             
         clear_button.pack(side = LEFT)
         solver_button.pack(side = LEFT)
+        
+        insane_button.pack(side = RIGHT)
+        hard_button.pack(side = RIGHT)
+        medium_button.pack(side = RIGHT)
+        easy_button.pack(side = RIGHT)
+        New_Label.pack(side = RIGHT)
 
 
         self.__draw_grid()
