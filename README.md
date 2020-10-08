@@ -12,3 +12,4 @@ An Auto Sudoku Solver with GUI.
 4. [x] Replace number in a tile with keys
 5. [ ] Change congrats to a Pop Up (or not).
 6. [x] Import Sudoku files from API or get from somewhere native.
+7. [ ] Fork repo to front end back end.
