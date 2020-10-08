@@ -4,7 +4,7 @@ import time
 import copy
 import random
 
-level = "Insane"
+level = "Easy"
 
 """ [Level of Difficulty] = Input the level of difficulty of the sudoku puzzle. Difficulty levels
         include ‘Easy’ ‘Medium’ ‘Hard’ and ‘Insane’. Outputs a sudoku of desired
@@ -315,16 +315,18 @@ def convertToArray(puzzle):
         for col in range(len(final_puzzle[0])):
             final_puzzle[row][col] = final_puzzle[row][col].returnSolved()
 
-    print(final_puzzle)
+    # print(final_puzzle)
 
 
-    with open('./boards/temp.sudoku', 'x') as temp_file:
-        for j in range(9):
-            for i in range(9):
+    with open('./boards/temp.sudoku', 'w') as temp_file:
+        for i in range(9):
+            for j in range(9):
                 temp_file.writelines(str(final_puzzle[i][j]))
             temp_file.write('\n')
 
-def main(level):
+    return final_puzzle
+
+def generate(level):
     """ Input the level of difficulty of the sudoku puzzle. Difficulty levels
         include ‘Easy’ ‘Medium’ ‘Hard’ and ‘Insane’. Outputs a sudoku of desired
         difficulty."""
@@ -334,13 +336,13 @@ def main(level):
         p = perfectSudoku()
         s = puzzleGen(p)
         if s[2] != 'Easy':
-            return main(level)
+            return generate(level)
         t2 = time.time()
         t3 = t2 - t1
         print("Runtime is " + str(t3) + " seconds")
         print("Guesses: " + str(s[1]))
         print("Level: " + str(s[2]))
-        return printSudoku(s[0])
+        return convertToArray(s[0])
     if level == 'Medium':
         p = perfectSudoku()
         s = puzzleGen(p)
@@ -348,15 +350,15 @@ def main(level):
             n += 1
             s = puzzleGen(p)
             if n > 50:
-                return main(level)
+                return generate(level)
         if s[2] != 'Medium':
-            return main(level)
+            return generate(level)
         t2 = time.time()
         t3 = t2 - t1
         print("Runtime is " + str(t3) + " seconds")
         print("Guesses: " + str(s[1]))
         print("Level: " + str(s[2]))
-        return printSudoku(s[0])
+        return convertToArray(s[0])
     if level == 'Hard':
         p = perfectSudoku()
         s = puzzleGen(p)
@@ -364,20 +366,20 @@ def main(level):
             n += 1
             s = puzzleGen(p)
             if n > 50:
-                return main(level)
+                return generate(level)
         while s[2] == 'Medium':
             n += 1
             s = puzzleGen(p)
             if n > 50:
-                return main(level)
+                return generate(level)
         if s[2] != 'Hard':
-            return main(level)
+            return generate(level)
         t2 = time.time()
         t3 = t2 - t1
         print("Runtime is " + str(t3) + " seconds")
         print("Guesses: " + str(s[1]))
         print("Level: " + str(s[2]))
-        return printSudoku(s[0])
+        return convertToArray(s[0])
     if level == 'Insane':
         p = perfectSudoku()
         s = puzzleGen(p)
@@ -385,20 +387,18 @@ def main(level):
             n += 1
             s = puzzleGen(p)
             if n > 50:
-                return main(level)
+                return generate(level)
         t2 = time.time()
         t3 = t2 - t1
         print("Runtime is " + str(t3) + " seconds")
         print("Guesses: " + str(s[1]))
         print("Level: " + str(s[2]))
-        return printSudoku(s[0])
+        return convertToArray(s[0])
     else:
         raise(ValueError)
 
 
 if __name__ == "__main__":
-    p = perfectSudoku()
-    s = puzzleGen(p)
-    convertToArray(s[0])
+    generate(level)
     # convertToArray(printSudoku(s[0]))
     #main(level)

@@ -1,7 +1,8 @@
 import argparse
 from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM
 from sudokuGameLogic import SudokuGame
-from sudokuUI import SudokuUI, WIDTH, HEIGHT, MARGIN, SIDE
+from sudokuUI import SudokuUI, WIDTH, HEIGHT, MARGIN, SIDE, LEVEL
+from sudokuGenerator import generate
 from os import listdir
 from os.path import isfile, join
 
@@ -25,13 +26,21 @@ def parse_arguments():
     args = vars(arg_parser.parse_args())
     return args['board']
 
-if __name__ == '__main__':
-    board_name = parse_arguments()
+
+def start_game(board_name):
+    """
+    """
+    # board_name = parse_arguments()
     with open('boards/' + '%s' % board_name, 'r') as boards_file:
+
+        root = Tk()
         game = SudokuGame(boards_file)
         game.start()
 
-        root = Tk()
         SudokuUI(root, game)
         root.geometry("%dx%d" % (WIDTH, HEIGHT + 40))
         root.mainloop()
+
+if __name__ == '__main__':
+    generate(LEVEL)
+    start_game('temp.sudoku')

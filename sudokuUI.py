@@ -1,9 +1,13 @@
 from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM, LEFT, RIGHT, Label
+import copy
 from gameAI import Game_Solver
+from sudokuGenerator import generate
 
 MARGIN = 80
 SIDE = 120
 WIDTH = HEIGHT = MARGIN * 2 + SIDE * 9
+LEVEL = "Easy"
+
 class SudokuUI(Frame):
     """
     """
@@ -14,6 +18,7 @@ class SudokuUI(Frame):
 
         self.row = 0
         self.col = 0
+        self.level = None
 
         self.__initUI()
 
@@ -40,11 +45,10 @@ class SudokuUI(Frame):
 
         New_Label = Label(self, text = "New Puzzle : ", font = ("Monaco, 20"))
 
-        easy_button = Button(self, text = "Easy", font = ("Monaco", 20))
-        medium_button = Button(self, text = "Medium", font = ("Monaco", 20))
-        hard_button = Button(self, text = "Hard", font = ("Monaco", 20))
-        insane_button = Button(self, text = "Insane", font = ("Monaco", 20))
-
+        easy_button = Button(self, text = "Easy", font = ("Monaco", 20), command = self.__easy_clicked)
+        medium_button = Button(self, text = "Medium", font = ("Monaco", 20), command = self.__medium_clicked)
+        hard_button = Button(self, text = "Hard", font = ("Monaco", 20), command = self.__hard_clicked)
+        insane_button = Button(self, text = "Insane", font = ("Monaco", 20), command = self.__insane_clicked)
 
                             
         clear_button.pack(side = LEFT)
@@ -63,6 +67,45 @@ class SudokuUI(Frame):
         # self.cell_click and self.key_pressed is a callback function , much like JS
         self.canvas.bind("<Button-1>", self.__cell_clicked)
         self.canvas.bind("<Key>", self.__key_pressed)
+
+    def fresh_start(self):
+        """
+        """
+        self.__clear_answers()
+        fresh_board = generate(self.level)
+        self.game.start_puzzle = copy.deepcopy(fresh_board)
+        self.game.puzzle = fresh_board
+        self.__draw_puzzle()
+
+    def __easy_clicked(self):
+        """
+        """
+        self.level = "Easy"
+        self.fresh_start()
+
+    def __medium_clicked(self):
+        """
+        """
+        self.level = "Medium"
+        self.fresh_start()
+
+
+    
+    def __hard_clicked(self):
+        """
+        """
+        self.level = "Hard"
+        self.fresh_start()
+
+
+    
+    def __insane_clicked(self):
+        """
+        """
+        self.level = "Insane"
+        self.fresh_start()
+
+
 
     def __draw_grid(self):
         """
@@ -188,11 +231,15 @@ class SudokuUI(Frame):
         )
 
     def __solve_puzzle(self):
-        print("working")
-
+        """
+        """
         solver = Game_Solver(self.game.puzzle)
         solver.print_board(self.game.puzzle)
         solver.solve(self.game.puzzle)
         print("___________________")
         solver.print_board(self.game.puzzle)
         self.__draw_puzzle()
+
+    def return_level(self):
+
+        return self.level
