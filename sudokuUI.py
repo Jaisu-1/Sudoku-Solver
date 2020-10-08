@@ -231,6 +231,7 @@ class SudokuUI(Frame):
     def __solve_puzzle(self):
         """
         """
+        self.__clear_answers()
         solver = Game_Solver(self.game.puzzle)
         solver.print_board(self.game.puzzle)
         solver.solve(self.game.puzzle)
