@@ -1,8 +1,7 @@
 import argparse
 from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM
 from sudokuGameLogic import SudokuGame
-from sudokuUI import SudokuUI, WIDTH, HEIGHT, MARGIN, SIDE, LEVEL
-from sudokuGenerator import generate
+from sudokuUI import SudokuUI, WIDTH, HEIGHT, MARGIN, SIDE, LEVEL, generate
 from os import listdir
 from os.path import isfile, join
 

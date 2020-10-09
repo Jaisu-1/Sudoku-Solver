@@ -1,5 +1,3 @@
-import argparse
-from tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM
 from sudokuBoard import SudokuBoard
 
 class SudokuGame(object):

@@ -1,7 +1,3 @@
-# Sudoku-Solver
-An Auto Sudoku Solver with GUI.
-
-
 ## TODO :
 
 1. [x] Add Sudoku solver w/ Backtracking    
