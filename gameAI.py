@@ -77,16 +77,17 @@ class Game_Solver:
                     return (i, j)  # row, col
 
         return None
-# with open('boards/' + 'beginner.sudoku', 'r') as boards_file:
-#     board = SudokuBoard(boards_file).return_board()
-# # print(board)
 
 
 if __name__ == "__main__":
-    
-    solver = Game_Solver(board)
+    pass
+    # solver = Game_Solver(board)
 
-    solver.print_board(board)
-    solver.solve(board)
-    print("___________________")
-    solver.print_board(board)
+    # solver.print_board(board)
+    # solver.solve(board)
+    # print("___________________")
+    # solver.print_board(board)
+
+    # with open('boards/' + 'beginner.sudoku', 'r') as boards_file:
+    #     board = SudokuBoard(boards_file).return_board()
+    # # print(board)
