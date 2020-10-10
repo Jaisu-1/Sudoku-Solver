@@ -2,14 +2,9 @@
 
 The project is a simple GUI Window based Sudoku Game and also solves through basic game-AI any Sudoku Game of any difficulty.
 
-<p align="center">
-    <img src="/assets/GUI.png# sample" alt="drawing" width="600"/>
-</p>
-
-img[src~="sample"] {
-   width: 150px;
-   height: 100px;
-}
+<div align="center" class="shadow">
+    <img src="/assets/GUI.png# sample" alt="drawing" style="box-shadow: 0 2px 14px 0 rgba(0, 0, 1, 1.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 100%; border-radius: 10px"/>
+</div>
 
 ### Personal Motivation
 
