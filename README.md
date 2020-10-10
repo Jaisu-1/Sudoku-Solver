@@ -1,4 +1,4 @@
-[![Run on Repl.it](https://repl.it/badge/github/Jaisu-1/Sudoku-Solver)](https://repl.it/github/Jaisu-1/Sudoku-Solver) 
+[![Run on Repl.it](https://repl.it/badge/github/Jaisu-1/Sudoku-Solver)](https://repl.it/@Jaisu_1/Sudoku-Solver-1) 
 
 <div align="center"> 
 
