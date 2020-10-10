@@ -2,7 +2,7 @@
     <h1>Sudoku Solver</h1> 
 </div>
 
-The project is a simple GUI Window based Sudoku Game and also solves through basic game-AI any Sudoku Game of any difficulty.
+The project is a GUI Window based Sudoku Game that also solves any Sudoku Game w/ Basic GameAI.
 
 <div align="center">
     <img src="/assets/GUI.png# sample" alt="drawing" style="box-shadow: 0 2px 24px 0 rgba(0, 0, 1, 1.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 13px" width="600px"/>
