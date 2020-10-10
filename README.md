@@ -7,11 +7,11 @@
 
 
 <div align="center">
-    <img src="/assets/GUI.png# sample" alt="drawing" style="box-shadow: 0 2px 24px 0 rgba(0, 0, 1, 1.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 13px" width="600px"/>
+    <img src="/assets/GUI.png# sample" alt="drawing" width="600px"/>
 </div>
-
-
 </div>  
+
+
 ### Personal Motivation
 Creating a game and then making an intelligent system which can play or solve the game is my fundamental goal and for some reason something that really interests me. The applications I want to build have 2 components - The Game, The AI. I wanted to create increasingly complex game-solvers to learn both game making (Software development) as well as Automation (using algorithms or Deep Learning) and my first step in learning to do so was a game I've been playing all my life, Sudoku.
 
