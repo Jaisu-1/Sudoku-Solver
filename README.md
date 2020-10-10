@@ -7,10 +7,11 @@
 
 <p>The project is a GUI Window based Sudoku Game that also solves any Sudoku Game through simple AI.<p>
 
-
+<br>
 <div align="center">
     <img src="/assets/GUI.png# sample" alt="drawing" width="600px"/>
 </div>
+<br>
 </div>  
 
 ### Table of Contents
@@ -24,7 +25,8 @@
 7. [License](#license)
 
 
-### Personal Motivation
+### Personal Motivation   
+<br>
 Creating a game and then making an intelligent system which can play or solve the game is my fundamental goal and for some reason something that really interests me. The applications I want to build have 2 components - The Game, The AI. I wanted to create increasingly complex game-solvers to learn both game making (Software development) as well as Automation (using algorithms or Deep Learning) and my first step in learning to do so was a game I've been playing all my life, Sudoku.
 
 An average game is a perfect example of OOP concepts coming together and being tested at their core principles and it is incredibly satifying to create good clean OOP compliant code. Creating a game teaches good OOP practices and is a great way of learning how to design architectures and class structures that scale well, which is a great skill to develop when my person goal is to build a large SaaS or OS at some point in the future.
@@ -54,8 +56,9 @@ The Game is made with OOP principles and these are the classes that interact wit
 <div align="center">
     <img src="/assets/Sudoku Solver - UML.jpg" alt="drawing" width="600px" border-width="10px"/>
 </div>
-
+<br>
 The game design is comprised of 5 main classes that are organized as shown in the picture above.
+<br>
 
 ##### 1. Board Class
 
@@ -102,9 +105,11 @@ A victory condition is triggered when each of the following conditions are met:
 In each of the above conditions, the terms to trigger victory remain the same, each of the above structures cannot have any repeating integers from 0..9. Once it's verified that each of these conditions are met, our puzzle is solved and we can wave the victory flag.
 
 ##### 3. UI Class 
-
-![UI](/assets/GUI.png)
-
+<br>
+<div align=center>
+    <img src="/assets/GUI.png# sample" alt="drawing" width="600px"/>
+</div>
+<br>
 The UI Class defines the properties and behaviours of the user interface and is responsible for handling tasks any and all concerning interacting with the visual components of the application.
 
 There are several visual components that compromise the Game Window UI. 
@@ -126,22 +131,30 @@ The overview of the UI is that each of the grid boxes need to be placed perfectl
 
 Each of these components need to have handlers that cannot be explained in a brief readme, so I shall expand on the handlers in a blog post about the game. 2 of them however , call other classes to handle , the puzzle generator class and the puzzle solver class.
 
-##### 4. Generator Class     
-![Generator Gif](/assets/generate-new.gif)
+##### 4. Generator Class   
+<br>  
+<div align=center>
+    <img src="/assets/generate-new.gif" alt="Generate New" width="600px"/>
+</div>
+<br>
 
 The Generator class generates new puzzles based on the input given. There are 4 levels that can be given, "Easy", "Medium", "Hard", "Insane". The generator works by creating a fully solved grid that passes the fully solved condition and then depending on the level, it removes some of the elements in the grid. The more harder levels have more sparse filled puzzles, the easier ones are almost solved with just few places to fill.
 
 
-##### 5. Solver Class     
-![Solver Gif](/assets/hard-solve.gif)
-
+##### 5. Solver Class
+<br>
+<div align=center>
+    <img src="/assets/hard-solve.gif" alt="Solve Hard" width="600px"/>
+</div>
+<br>
 The Solver class solves any given puzzle given using a backtracking algorithm. It could be solved in a brute force algorith, but that would be an O(N!) solution. A backtracking approach brings this down to - > Time Complexity: O(9^(m * n)) and a Space Complexity: O(m*n).
 
 ## Screenshots
-![Debug](/assets/debug.png)   
-![Victory](/assets/solve-victory.gif)
-![Clear](/assets/solve-clear.gif)
-
+<div align="center">
+    <img src="/assets/debug.png" alt="drawing" width="600px"/>
+    <br><img src="/assets/solve-victory.gif" alt="drawing" width="600px"/>
+    <br><img src="/assets/solve-clear.gif" alt="drawing" width="600px"/>
+</div>
 ## Tech
 
 Built with
