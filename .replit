@@ -1,2 +1,2 @@
-language = "python3"
-run = "python sudokuScripts.py"
+language = "sh"
+run = "git checkout replit-readme; python sudokuScripts.py"
