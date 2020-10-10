@@ -11,6 +11,11 @@
 </div>
 </div>  
 
+### Table of Contents
+
+1. [Personal Motivation](#personal-motivation)
+2. [Features](#features)
+
 
 ### Personal Motivation
 Creating a game and then making an intelligent system which can play or solve the game is my fundamental goal and for some reason something that really interests me. The applications I want to build have 2 components - The Game, The AI. I wanted to create increasingly complex game-solvers to learn both game making (Software development) as well as Automation (using algorithms or Deep Learning) and my first step in learning to do so was a game I've been playing all my life, Sudoku.
@@ -34,9 +39,15 @@ The features will be expanded upon in the Class Structures section and an upcomi
 
 ### Class Structures
 
+The Game is made with OOP principles and these are the classes that interact with each other.
+
+
 #### Overview - 
 
-[Display Picture]
+<div align="center">
+    <img src="/assets/Sudoku Solver - UML.jpg" alt="drawing" width="600px" border-width="10px"/>
+</div>
+
 The game design is comprised of 5 main classes that are organized as shown in the picture above.
 
 ##### 1. Board Class
@@ -95,13 +106,6 @@ The Generator class generates new puzzles based on the input given. There are 4 
 
 The Solver class solves any given puzzle given using a backtracking algorithm. It could be solved in a brute force algorith, but that would be an O(N!) solution. A backtracking approach brings this down to - > Time Complexity: O(9^(m * n)) and a Space Complexity: O(m*n).
 
-
-## Code style
-If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-
-
 ## Screenshots
 Include logo/demo screenshot etc.
 
@@ -117,13 +121,6 @@ Show what the library does as concisely as possible, developers should be able t
 
 ## Installation
 Provide step by step series of examples and explanations about how to get a development env running.
-
-## How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
-
-## Contribute
-
-Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
 
 ## License
 A short snippet describing the license (MIT, Apache etc)
