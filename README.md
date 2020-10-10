@@ -17,6 +17,11 @@
 
 1. [Personal Motivation](#personal-motivation)
 2. [Features](#features)
+3. [Class Structures](#class-structures)
+4. [Screenshots](#screenshots)
+5. [Tech](#tech)
+6. [Installation](#installation-and-run)
+7. [License](#license)
 
 
 ### Personal Motivation
@@ -54,6 +59,16 @@ The game design is comprised of 5 main classes that are organized as shown in th
 
 ##### 1. Board Class
 
+The Board class can be defined with the following initiation.
+
+``` python
+class SudokuBoard(object):
+    """
+    """
+    def __init__(self, board_file):
+        self.board = self.__create_board(board_file)
+```
+
 The Board class is responsible for holding and maintaining the integrity of the structure of the basic sudoku board. Broadly speaking that's 3 responsibilities - 
 
 1. Create a 2D - Array which holds the sudoku board values.
@@ -61,6 +76,20 @@ The Board class is responsible for holding and maintaining the integrity of the 
 3. Raise errors if there's any errors in the input values, they should be in range (0 .. 9)
 
 ##### 2. Game Class 
+
+The Game class can be defined with the following instatiation
+
+``` python
+class SudokuGame(object):
+    """
+    """
+    def __init__(self, board_file):
+        
+        self.board_file = board_file
+        Board = SudokuBoard(board_file)
+        self.start_puzzle = Board.board
+```
+
 
 The Game class is responsible for keeping all the game logic together in the same class. From starting the game to keep track of victory conditions. A fundamental responsibility is to append to the final board , the integers of the puzzle and then to check for victory conditions.
 
@@ -74,7 +103,7 @@ In each of the above conditions, the terms to trigger victory remain the same, e
 
 ##### 3. UI Class 
 
-[picture]
+![UI](/assets/GUI.png)
 
 The UI Class defines the properties and behaviours of the user interface and is responsible for handling tasks any and all concerning interacting with the visual components of the application.
 
@@ -98,33 +127,40 @@ The overview of the UI is that each of the grid boxes need to be placed perfectl
 Each of these components need to have handlers that cannot be explained in a brief readme, so I shall expand on the handlers in a blog post about the game. 2 of them however , call other classes to handle , the puzzle generator class and the puzzle solver class.
 
 ##### 4. Generator Class     
-[code]
+![Generator Gif](/assets/generate-new.gif)
 
 The Generator class generates new puzzles based on the input given. There are 4 levels that can be given, "Easy", "Medium", "Hard", "Insane". The generator works by creating a fully solved grid that passes the fully solved condition and then depending on the level, it removes some of the elements in the grid. The more harder levels have more sparse filled puzzles, the easier ones are almost solved with just few places to fill.
 
 
 ##### 5. Solver Class     
-[code]
+![Solver Gif](/assets/hard-solve.gif)
 
 The Solver class solves any given puzzle given using a backtracking algorithm. It could be solved in a brute force algorith, but that would be an O(N!) solution. A backtracking approach brings this down to - > Time Complexity: O(9^(m * n)) and a Space Complexity: O(m*n).
 
 ## Screenshots
-Include logo/demo screenshot etc.
+![Debug](/assets/debug.png)   
+![Victory](/assets/solve-victory.gif)
+![Clear](/assets/solve-clear.gif)
 
 ## Tech
 
 Built with
-- [python](https://electron.atom.io)
-- [tkinter](https://electron.atom.io)
+- [python](https://www.python.org/)
+- [tkinter](https://docs.python.org/3/library/tkinter.html)
 
 
-## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+## Installation and Run
 
-## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
+The app is built entirely in native python so our requirements are just Python. 
+
+Running the application is simply calling the command 
+
+``` sh
+python sudokuScripts.py
+```
+
 
 ## License
-A short snippet describing the license (MIT, Apache etc)
+Uses MIT License.
 
-MIT © [Jaisurya]()
+MIT © [Jaisurya](https://github.com/Jaisu-1/)

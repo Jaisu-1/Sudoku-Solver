@@ -33,13 +33,13 @@ class SudokuUI(Frame):
         clear_button = Button(self,
                               text="Clear answers",
                               height = HEIGHT // 15,
-                              font = ("Monaco", 20),
+                              font = ("Monaco", HEIGHT // 62),
                               command=self.__clear_answers)
 
         solver_button = Button(self, 
                             text = "Solve Puzzle",
                             height = HEIGHT // 15,
-                            font = ("Monaco", 20),
+                            font = ("Monaco", HEIGHT // 62),
                             command=self.__solve_puzzle
                             )
 
