@@ -1,4 +1,6 @@
-# Sudoku Solver 
+<div align="center"> 
+    <h1>Sudoku Solver</h1> 
+</div>
 
 The project is a simple GUI Window based Sudoku Game and also solves through basic game-AI any Sudoku Game of any difficulty.
 
