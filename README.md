@@ -1,3 +1,6 @@
+[![Run on Repl.it](https://repl.it/badge/github/Jaisu-1/Sudoku-Solver)](https://repl.it/github/Jaisu-1/Sudoku-Solver)
+
+
 <div align="center"> 
 
 # Sudoku Solver
