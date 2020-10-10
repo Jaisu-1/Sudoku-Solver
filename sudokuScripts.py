@@ -42,4 +42,4 @@ def start_game(board_name):
 
 if __name__ == '__main__':
     generate(LEVEL)
-    start_game('debug.sudoku')
+    start_game('temp.sudoku')
