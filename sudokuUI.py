@@ -3,8 +3,8 @@ import copy
 from gameAI import Game_Solver
 from sudokuGenerator import generate
 
-MARGIN = 80
-SIDE = 120
+MARGIN = 30
+SIDE = 50
 WIDTH = HEIGHT = MARGIN * 2 + SIDE * 9
 LEVEL = "Easy"
 
@@ -32,23 +32,23 @@ class SudokuUI(Frame):
 
         clear_button = Button(self,
                               text="Clear answers",
-                              height = HEIGHT // 15,
-                              font = ("Monaco", 20),
+                              height = HEIGHT // 30,
+                              font = ("Monaco", HEIGHT // 70),
                               command=self.__clear_answers)
 
         solver_button = Button(self, 
                             text = "Solve Puzzle",
-                            height = HEIGHT // 15,
-                            font = ("Monaco", 20),
+                            height = HEIGHT // 30,
+                            font = ("Monaco", HEIGHT // 70),
                             command=self.__solve_puzzle
                             )
 
-        New_Label = Label(self, text = "New Puzzle : ", font = ("Monaco, 20"))
+        New_Label = Label(self, text = "New Puzzle : ", font = ("Monaco", HEIGHT // 70))
 
-        easy_button = Button(self, text = "Easy", font = ("Monaco", 20), command = self.__easy_clicked)
-        medium_button = Button(self, text = "Medium", font = ("Monaco", 20), command = self.__medium_clicked)
-        hard_button = Button(self, text = "Hard", font = ("Monaco", 20), command = self.__hard_clicked)
-        insane_button = Button(self, text = "Insane", font = ("Monaco", 20), command = self.__insane_clicked)
+        easy_button = Button(self, text = "Easy", font = ("Monaco", HEIGHT // 70), command = self.__easy_clicked)
+        medium_button = Button(self, text = "Medium", font = ("Monaco", HEIGHT // 70), command = self.__medium_clicked)
+        hard_button = Button(self, text = "Hard", font = ("Monaco", HEIGHT // 70), command = self.__hard_clicked)
+        insane_button = Button(self, text = "Insane", font = ("Monaco", HEIGHT // 70), command = self.__insane_clicked)
 
                             
         clear_button.pack(side = LEFT)

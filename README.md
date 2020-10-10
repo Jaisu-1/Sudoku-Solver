@@ -1,19 +1,12 @@
 [![Run on Repl.it](https://repl.it/badge/github/Jaisu-1/Sudoku-Solver)](https://repl.it/github/Jaisu-1/Sudoku-Solver)
 
 
-<div align="center"> 
-
 # Sudoku Solver
 
 
-<p>The project is a GUI Window based Sudoku Game that also solves any Sudoku Game through simple AI.<p>
+The project is a GUI Window based Sudoku Game that also solves any Sudoku Game through simple AI.
 
-
-<div align="center">
-    <img src="/assets/GUI.png# sample" alt="drawing" width="600px"/>
-</div>
-</div>  
-
+![Main-GUI](/assets/GUI.png)
 
 ### Personal Motivation
 Creating a game and then making an intelligent system which can play or solve the game is my fundamental goal and for some reason something that really interests me. The applications I want to build have 2 components - The Game, The AI. I wanted to create increasingly complex game-solvers to learn both game making (Software development) as well as Automation (using algorithms or Deep Learning) and my first step in learning to do so was a game I've been playing all my life, Sudoku.
@@ -39,7 +32,6 @@ The features will be expanded upon in the Class Structures section and an upcomi
 
 #### Overview - 
 
-[Display Picture]
 The game design is comprised of 5 main classes that are organized as shown in the picture above.
 
 ##### 1. Board Class
@@ -64,8 +56,6 @@ In each of the above conditions, the terms to trigger victory remain the same, e
 
 ##### 3. UI Class 
 
-[picture]
-
 The UI Class defines the properties and behaviours of the user interface and is responsible for handling tasks any and all concerning interacting with the visual components of the application.
 
 There are several visual components that compromise the Game Window UI. 
@@ -88,13 +78,11 @@ The overview of the UI is that each of the grid boxes need to be placed perfectl
 Each of these components need to have handlers that cannot be explained in a brief readme, so I shall expand on the handlers in a blog post about the game. 2 of them however , call other classes to handle , the puzzle generator class and the puzzle solver class.
 
 ##### 4. Generator Class     
-[code]
 
 The Generator class generates new puzzles based on the input given. There are 4 levels that can be given, "Easy", "Medium", "Hard", "Insane". The generator works by creating a fully solved grid that passes the fully solved condition and then depending on the level, it removes some of the elements in the grid. The more harder levels have more sparse filled puzzles, the easier ones are almost solved with just few places to fill.
 
 
 ##### 5. Solver Class     
-[code]
 
 The Solver class solves any given puzzle given using a backtracking algorithm. It could be solved in a brute force algorith, but that would be an O(N!) solution. A backtracking approach brings this down to - > Time Complexity: O(9^(m * n)) and a Space Complexity: O(m*n).
 
@@ -103,30 +91,6 @@ The Solver class solves any given puzzle given using a backtracking algorithm. I
 If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-
-
-## Screenshots
-Include logo/demo screenshot etc.
-
-## Tech
-
-Built with
-- [python](https://electron.atom.io)
-- [tkinter](https://electron.atom.io)
-
-
-## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
-
-## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
-
-## How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
-
-## Contribute
-
-Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
 
 ## License
 A short snippet describing the license (MIT, Apache etc)
