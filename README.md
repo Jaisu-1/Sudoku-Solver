@@ -155,6 +155,8 @@ The Solver class solves any given puzzle given using a backtracking algorithm. I
     <br><img src="/assets/solve-victory.gif" alt="drawing" width="600px"/>
     <br><img src="/assets/solve-clear.gif" alt="drawing" width="600px"/>
 </div>
+
+
 ## Tech
 
 Built with
