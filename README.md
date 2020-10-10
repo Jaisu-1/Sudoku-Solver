@@ -2,6 +2,9 @@
 
 The project is a simple GUI Window based Sudoku Game and also solves through basic game-AI any Sudoku Game of any difficulty.
 
+<center><img src="/assets/GUI.png" alt="drawing" width="400"/></center>
+
+
 ### Personal Motivation
 
 Creating a game and then making an intelligent system which can play or solve the game is my fundamental goal and for some reason something that really interests me. The applications I want to build have 2 components - The Game, The AI. I wanted to create increasingly complex game-solvers to learn both game making (Software development) as well as Automation (using algorithms or Deep Learning) and my first step in learning to do so was a game I've been playing all my life, Sudoku.
