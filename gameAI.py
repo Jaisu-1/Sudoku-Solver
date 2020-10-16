@@ -7,8 +7,11 @@ class Game_Solver:
         self.board = board
 
     def solve(self, bo):
-
-        # 
+        """
+        The Main Game Solver lies in this method.
+        Solves through backtracking and reduces Time Complexity from O(N!)
+        to O(n ^ m) where m = n. of blank spaces.
+        """
 
         find = self.find_empty(bo)
         if not find:
@@ -54,6 +57,9 @@ class Game_Solver:
 
 
     def print_board(self, bo):
+        """
+        Tester Method to check backend without involving front end.
+        """
         for i in range(len(bo)):
             if i % 3 == 0 and i != 0:
                 print("- - - - - - - - - - - - - ")
