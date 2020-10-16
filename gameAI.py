@@ -1,6 +1,3 @@
-from time import sleep
-# from sudokuBoard import SudokuBoard
-
 class Game_Solver:
 
     def __init__(self, board):
@@ -21,8 +18,6 @@ class Game_Solver:
 
         for i in range(1,10):
             if self.valid(bo, i, (row, col)):
-                # sleep(0.0100)
-                # # print(bo)
                 bo[row][col] = i
 
                 if self.solve(bo):
@@ -87,13 +82,3 @@ class Game_Solver:
 
 if __name__ == "__main__":
     pass
-    # solver = Game_Solver(board)
-
-    # solver.print_board(board)
-    # solver.solve(board)
-    # print("___________________")
-    # solver.print_board(board)
-
-    # with open('boards/' + 'beginner.sudoku', 'r') as boards_file:
-    #     board = SudokuBoard(boards_file).return_board()
-    # # print(board)
