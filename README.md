@@ -25,10 +25,9 @@
 7. [License](#license)
 
 
-### Personal Motivation   
-<br>
+### Personal Motivation                 
 Creating a game and then making an intelligent system which can play or solve the game is my fundamental goal and for some reason something that really interests me. The applications I want to build have 2 components - The Game, The AI. I wanted to create increasingly complex game-solvers to learn both game making (Software development) as well as Automation (using algorithms or Deep Learning) and my first step in learning to do so was a game I've been playing all my life, Sudoku.
-<br>
+
 An average game is a perfect example of OOP concepts coming together and being tested at their core principles and it is incredibly satifying to create good clean OOP compliant code. Creating a game teaches good OOP practices and is a great way of learning how to design architectures and class structures that scale well, which is a great skill to develop when my person goal is to build a large SaaS or OS at some point in the future.
 
 The project was created with Tkinter as I want to learn to make and build OS based programs. Python and Tkinter also happen to be incredibly accessible and can be easily be switched to C++ and QT for improved efficiency and performance. But for now, Python will do the job, especially to understand core concepts.
